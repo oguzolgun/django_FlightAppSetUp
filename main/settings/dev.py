@@ -1,17 +1,19 @@
-from .base import  *
+from .base import *
 
+DEBUG = True
 
+ALLOWED_HOSTS = []
 
-
-THIRD_PARTY_APPS=[
-    'debug_toolbar',
+THIRD_PARTY_APPS = [
+    "debug_toolbar",
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS
 
 THIRD_PARTY_MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
+
 MIDDLEWARE += THIRD_PARTY_MIDDLEWARE
 
 # Database
@@ -24,3 +26,6 @@ DATABASES = {
     }
 }
 
+INTERNAL_IPS = [ 
+    "127.0.0.1", 
+]
